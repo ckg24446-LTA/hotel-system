@@ -1,0 +1,50 @@
+:root{--ai:#1f3a5f;--ai2:#16294a;--bg:#f4f6f9;--card:#fff;--line:#dde3ec;--tx:#1d2733;--mute:#66758a;--kin:#b4863a;--red:#b23a48;--grn:#2f7d5b}
+*{box-sizing:border-box}
+body{margin:0;display:flex;min-height:100vh;background:var(--bg);color:var(--tx);font:15px/1.6 "Noto Sans JP",system-ui,sans-serif}
+.side{width:230px;background:var(--ai2);color:#fff;padding:28px 16px;display:flex;flex-direction:column;gap:24px;position:sticky;top:0;height:100vh}
+.side h1{font:700 22px/1.4 "Shippori Mincho",serif;margin:0 8px;letter-spacing:.08em}
+nav{display:flex;flex-direction:column;gap:4px}
+nav button{all:unset;cursor:pointer;padding:11px 14px;border-radius:6px;color:#c9d4e6}
+nav button:hover{background:#ffffff14}
+nav button.on{background:#fff;color:var(--ai);font-weight:700}
+.reset{all:unset;cursor:pointer;margin-top:auto;font-size:12px;color:#8fa0bd;padding:8px 14px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--kin);outline-offset:2px}
+main{flex:1;padding:32px 40px;min-width:0}
+h2{font:700 26px "Shippori Mincho",serif;margin:0 0 4px;color:var(--ai)}
+.sub{color:var(--mute);margin:0 0 20px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin-bottom:16px}
+.bar label{display:flex;flex-direction:column;font-size:12px;color:var(--mute);gap:2px}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;min-width:0}
+.btn{font:inherit;cursor:pointer;border:0;border-radius:6px;padding:8px 16px;background:var(--ai);color:#fff}
+.btn:hover{background:var(--ai2)}
+.btn.sm{padding:4px 10px;font-size:13px}
+.btn.ghost{background:#fff;color:var(--ai);border:1px solid var(--line)}
+.btn.del{background:#fff;color:var(--red);border:1px solid #e6c3c8}
+.btn.gold{background:var(--kin)}
+.wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;white-space:nowrap}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#eef2f7;font-size:13px;color:var(--mute);font-weight:500}
+tr:last-child td{border-bottom:0}
+td.act{display:flex;gap:6px}
+.empty{padding:28px;text-align:center;color:var(--mute)}
+.badge{padding:2px 10px;border-radius:99px;font-size:12px;background:#e8edf5;color:var(--ai)}
+.badge.s1{background:#fff3dc;color:#8a6420}.badge.s2{background:#dff3e8;color:var(--grn)}.badge.s3{background:#fde4e7;color:var(--red)}.badge.s4{background:#eee;color:#777}
+h3{font:700 18px "Shippori Mincho",serif;margin:28px 0 10px;color:var(--ai)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--kin);border-radius:8px;padding:14px 18px}
+.stat b{display:block;font-size:24px;color:var(--ai)}.stat span{font-size:13px;color:var(--mute)}
+dialog{border:0;border-radius:10px;padding:0;width:min(460px,94vw);box-shadow:0 20px 60px #0004}
+dialog::backdrop{background:#16294a99}
+dialog form,dialog .box{padding:24px;display:flex;flex-direction:column;gap:12px}
+dialog label{display:flex;flex-direction:column;font-size:13px;color:var(--mute);gap:3px}
+dialog h3{margin:0 0 4px}
+.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
+dl{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:0}dt{color:var(--mute)}dd{margin:0}
+.receipt{font-family:"Noto Sans JP",monospace}.receipt h3{text-align:center}.receipt hr{border:0;border-top:1px dashed #999;width:100%}
+.receipt .tot{font-size:20px;font-weight:700;text-align:right}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--ai2);color:#fff;padding:10px 20px;border-radius:6px;opacity:0;transition:.25s;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){body{flex-direction:column}.side{width:100%;height:auto;position:static;padding:16px}nav{flex-direction:row;overflow-x:auto}nav button{white-space:nowrap}.reset{display:none}main{padding:20px 14px}}
+@media print{body>*:not(dialog){display:none!important}dialog{box-shadow:none;width:100%}.actions{display:none}}
+@media(prefers-reduced-motion:reduce){#toast{transition:none}}
